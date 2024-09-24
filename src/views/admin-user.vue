@@ -83,12 +83,6 @@
         <a-form-item label="昵称">
           <a-input v-model:value="user.name"></a-input>
         </a-form-item>
-        <a-form-item label="密码">
-          <a-input
-            v-model:value="user.password"
-            :disabled="!!user.password"
-          ></a-input>
-        </a-form-item>
       </a-form>
     </a-modal>
     <a-modal

@@ -120,6 +120,17 @@ const onSelect=(seleceKeys:any,info:any)=>{
 
     }
 }
+//点赞
+const vote=()=>{
+  axios.get('/doc/vote/'+doc.value.id).then((resp)=>{
+    const data = resp.data;
+    if(data.success){
+      doc.value.voteCount++;
+    }else{
+      message.error(data.message);
+    }
+  })
+}
 </script>
 <style>
 /* wangeditor默认样式, 参照: http://www.wangeditor.com/doc/pages/02-%E5%86%85%E5%AE%B9%E5%A4%84%E7%90%86/03-%E8%8E%B7%E5%8F%96html.html */
